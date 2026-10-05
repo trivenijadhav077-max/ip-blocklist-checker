@@ -1,0 +1,21 @@
+# List of initial blocked IP addresses
+blocked_ips = ["192.168.1.1", "10.0.0.5", "172.16.0.1"]
+
+# Display the currently blocked IPs
+print("Currently blocked IPs:")
+for i in blocked_ips:
+    print("-", i)
+
+# Ask the user to add a new IP to the blocklist
+new_ip = input("\nEnter a new IP address to add to the blocked list: ")
+blocked_ips.append(new_ip)
+print(f"IP {new_ip} has been added.")
+
+# Ask the user to check a specific IP
+check_ip = input("\nEnter an IP to check if it's blocked: ")
+
+# Check and display the status
+if check_ip in blocked_ips:
+    print(f"Result: {check_ip} is blocked")
+else:
+    print(f"Result: {check_ip} is not blocked")
